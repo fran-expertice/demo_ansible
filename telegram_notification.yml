@@ -1,0 +1,9 @@
+---
+- name: Telegram Notifications
+  hosts: all
+  tasks:
+  - name: enviar mensaje via Telegram
+    telegram:
+     token: '1188778937:AAGVml2jrBDI3wqgaHDRM6fxPJd-XIIapwE'
+     chat_id: 756926933
+     msg: Tarea Ansible Finalizada Satisfactoriamente el {{ansible_date_time.date}} por {{ tower_user_name }} 

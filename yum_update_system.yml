@@ -1,0 +1,9 @@
+---
+- name: Yum
+  gather_facts: false
+  hosts: all
+  tasks:
+   - name: Upgrade all packages
+     yum:
+       name: '*'
+       state: latest
