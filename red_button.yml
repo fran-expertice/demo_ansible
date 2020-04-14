@@ -1,0 +1,10 @@
+---
+- name: Apaga todo los linux.
+  become: yes
+  become_method: sudo
+  hosts: all
+
+  tasks:
+  - name: Correr Apagado de Emergencia.
+    command: 'shutdown -h now'
+    ignore_errors: yes
