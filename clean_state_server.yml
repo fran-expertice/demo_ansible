@@ -1,0 +1,20 @@
+---
+- name: Desinstala Apache httpd
+  hosts: all
+  tasks:
+  - name: Desinstala httpd
+    package:
+      name: httpd
+      state: absent
+  
+  - name: Retirar servicios http/https del firewall
+    command: 
+     firewall-cmd --permanent --remove-service=http  --remove-service=https
+    notify: firewalld reload
+  
+  handlers:
+  - name: firewalld reload
+    command: firewall-cmd --reload
+
+
+

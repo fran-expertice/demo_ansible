@@ -1,0 +1,9 @@
+---
+- name: Start httpd service, if not started
+  hosts: all
+  tasks:
+  - name: Activamos y Arrancamos el Apache  
+    service:
+     name: httpd
+     state: restarted
+     enabled: yes

@@ -1,0 +1,12 @@
+---
+- name: Configura Servicios http/https en firewall del WebServer 
+  hosts: all
+  tasks:
+  - firewalld:
+      service: https
+      permanent: yes
+      state: enabled
+  - firewalld:
+      service: http
+      permanent: yes
+      state: enabled

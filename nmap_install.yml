@@ -1,0 +1,8 @@
+---
+- name: Instalar nmap via yum 
+  hosts: all 
+  tasks:
+  - name: Instalar nmap.
+    package: 
+      name: nmap
+      state: present

@@ -1,0 +1,9 @@
+---
+- name: Instala y Configura WebServer 
+  hosts: all
+  tasks:
+  - name: Instalar httpd
+    package: 
+      name: httpd
+      state: present
+

@@ -1,0 +1,9 @@
+---
+- name: Instala y Configura WebServer 
+  hosts: all
+  tasks:
+  - name: Copy static index.html to Webserver
+    template:
+      src: index.html.j2
+      dest: /usr/share/tomcat/webapps/ROOT/index.html
+      mode: 0644

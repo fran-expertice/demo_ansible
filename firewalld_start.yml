@@ -1,0 +1,9 @@
+---
+- name: Start services, if not started
+  hosts: all
+  tasks:
+  - name: Start service firewalld, if no started  
+    service:
+     name: firewalld
+     state: restarted
+     enabled: yes

@@ -1,0 +1,17 @@
+---
+- name: Install Redhat Insight
+  gather_facts: false
+  hosts: all  
+  tasks:
+    - name: Install Insights Client
+      yum:
+        name: insights-client
+        state: latest
+    
+    - name: Replace before the expression till the begin of the file (requires Ansible >= 2.4)
+      replace:
+        path: /etc/insights-client/insights-client.conf
+        before: '#authmethod= '
+        regexp: '^(.+)$'
+        replace: '# '
+
