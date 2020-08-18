@@ -1,8 +1,8 @@
 ---
-- name: Start httpd service, if not started
-  hosts: all
+- name: Start httpd service, if not started.
+  hosts: "{{ var_nodo }}"
   tasks:
-  - name: Activamos y Arrancamos el Apache  
+  - name: Activamos y Arrancamos Apache.  
     service:
      name: httpd
      state: restarted
