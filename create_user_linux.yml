@@ -1,0 +1,15 @@
+---
+- name: Crear usuario "{{ var_usuario }}" en el host/grupo "{{ var_nodo }}".
+  hosts: "{{ var_nodo }}"
+  gather_facts: false
+  tasks:
+  - name: Seteamos la clave  
+    set_fact:
+     user_password: "{{ var_password }}"
+
+  - name: Add the user "{{ var_usuario }}" en grupo 'wheel'
+    user:
+      name: "{{ var_usuario }}"
+      comment: "{{ var_usuario }}" User
+      groups: wheel
+      password: "{{ user_password | password_hash('sha512', "{{ var_usuario }}") }}"
