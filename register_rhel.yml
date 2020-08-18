@@ -1,9 +1,9 @@
 ---
 - name: Subscription Manager
   gather_facts: false
-  hosts: all
+  hosts: "{{ var_nodo }}"
   tasks:
-   - name: Register as user  with password and auto-subscribe to available content.
+   - name: Register as user with password and auto-subscribe to available content.
      redhat_subscription:
       state: present
       username: "{{ rhn_user }}"
