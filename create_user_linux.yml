@@ -10,6 +10,6 @@
   - name: Add the user "{{ var_usuario }}" en grupo 'wheel'
     user:
       name: "{{ var_usuario }}"
-      comment: "{{ var_usuario }}" User
+      comment: "{{ var_usuario }}"
       groups: wheel
       password: "{{ user_password | password_hash('sha512', "{{ var_usuario }}") }}"
