@@ -1,8 +1,8 @@
 ---
 - name: Instalar Paquete definido por variable via yum. 
-  hosts: all {{ var_nodo }}
+  hosts: all "{{ var_nodo }}"
   tasks:
-  - name: Instalar {{ var_paquete }}.
+  - name: Instalar "{{ var_paquete }}".
     package: 
-      name: {{ var_paquete }}
+      name: "{{ var_paquete }}"
       state: present
