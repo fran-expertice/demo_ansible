@@ -1,0 +1,10 @@
+---
+- name: Eliminar usuario "{{ var_usuario }}" en el host/grupo "{{ var_nodo }}".
+  hosts: "{{ var_nodo }}"
+  gather_facts: false
+  tasks:
+  - name: Remover el usuario "{{ var_usuario }}"
+    user:
+     name: "{{ var_usuario }}"
+     state: absent
+     remove: yes
