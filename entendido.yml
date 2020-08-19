@@ -1,21 +1,25 @@
 ---
 - name: Esto es una playbook. Una playbook tiene una o varias tareas.
+  connection: local
   hosts: localhost
   gather_facts: false
-  vars: 
+  vars:
    servidor: web.expertice.local
   tasks:
-  
+
   - name: Aqui va nuestra primera tarea. Transmitir un simple mensaje a la pantalla.
     debug: msg="Podriamos hacer casi cualquier cosa, en vez de dar salida a solo un mensaje."
-  
+
+
   - name: Instalar paquetes en un sistema, por cierto esta es nuestra segunda tarea.
-    debug: msg="Estamos instalando paquetes usando el modulo yum, sin los modulos, ninguna tarea puede ser posible."    
+    debug: msg="Estamos instalando paquetes usando el modulo yum, sin los modulos, ninguna tarea puede ser posible."
+
 
   - name: Lanzamos un ping para verificar salida a internet desde el servidor {{ servidor }}, y lo estamos haciendo en nuestra tercera tarea. Esto es posible con el modulo command.
     command: ping google.com -c 2
     register: salida
-  
+
+
   - debug: var=salida.stdout_lines
 
   - name: Mas tareas si quisieramos.
