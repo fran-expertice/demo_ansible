@@ -4,7 +4,7 @@
   gather_facts: false
   tasks:
   - name: Pull file from source
-      git:
-        repo: 'https://github.com/fran-expertice/php_example.git'
-        dest: /var/www/html
-        version: 1.0.0
+    git:
+     repo: 'https://github.com/fran-expertice/php_example.git'
+     dest: /var/www/html
+     version: 1.0.0
