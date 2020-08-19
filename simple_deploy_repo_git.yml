@@ -5,6 +5,6 @@
   tasks:
   - name: Pull file from source
     git:
-     repo: 'https://github.com/fran-expertice/demo.git'
+     repo: "{{ var_repo }}"
      dest: /var/www/html
-     version: 1.0.0
+     version: "{{ var_version }}"
