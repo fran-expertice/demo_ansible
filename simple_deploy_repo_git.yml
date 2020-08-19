@@ -5,6 +5,6 @@
   tasks:
   - name: Pull file from source
     git:
-     repo: 'https://github.com/fran-expertice/php_example.git'
+     repo: 'https://github.com/fran-expertice/demo.git'
      dest: /var/www/html
      version: 1.0.0
