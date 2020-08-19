@@ -4,7 +4,7 @@
   hosts: localhost
   gather_facts: false
   vars:
-   servidor: web.expertice.local
+   servidor: web.expertice.com.ar
   tasks:
 
   - name: Aqui va nuestra primera tarea. Transmitir un simple mensaje a la pantalla.
