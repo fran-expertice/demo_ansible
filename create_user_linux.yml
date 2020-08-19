@@ -8,9 +8,17 @@
      user_password: "{{ var_password }}"
      user_name: "{{ var_usuario }}"
 
-  - name: Add the user "{{ var_usuario }}" en grupo 'wheel'
-    user:
+  - name: Add the user "{{ var_usuario }}" en el sistema "{{ var_nodo }}".
+     user:
       name: "{{ var_usuario }}"
       comment: "{{ var_usuario }}"
       groups: wheel
       password: "{{ user_password | password_hash('sha512', user_name) }}"
+
+ - name: Add the user "{{ var_usuario }}" en grupo 'wheel'
+    when: "{{ var_sudo }}" = "true" 
+    user:
+      name: "{{ var_usuario }}"
+#      comment: "{{ var_usuario }}"
+      groups: wheel
+#      password: "{{ user_password | password_hash('sha512', user_name) }}"
