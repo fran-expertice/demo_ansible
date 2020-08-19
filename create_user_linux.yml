@@ -7,7 +7,7 @@
     set_fact:
      user_password: "{{ var_password }}"
      user_name: "{{ var_usuario }}"
-
+     user_sudo: "{{ var_sudo }}"
   - name: Add the user "{{ var_usuario }}" en el sistema "{{ var_nodo }}".
     user:
      name: "{{ var_usuario }}"
@@ -21,4 +21,4 @@
      comment: "{{ var_usuario }}"
      groups: wheel
 #     password: "{{ user_password | password_hash('sha512', user_name) }}"
-    when: "{{ var_sudo }}" == "true" 
+    when: user_sudo == "true" 
