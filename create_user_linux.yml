@@ -15,10 +15,10 @@
      groups: wheel
      password: "{{ user_password | password_hash('sha512', user_name) }}"
 
-  - name: Add the user "{{ var_usuario }}" en grupo 'wheel'
-    when: "{{ var_sudo }}" == "true" 
-    user:
-     name: "{{ var_usuario }}"
+#  - name: Add the user "{{ var_usuario }}" en grupo 'wheel'
+#    when: "{{ var_sudo }}" == "true" 
+#    user:
+#     name: "{{ var_usuario }}"
 #      comment: "{{ var_usuario }}"
-     groups: wheel
+#     groups: wheel
 #      password: "{{ user_password | password_hash('sha512', user_name) }}"
