@@ -1,0 +1,10 @@
+---
+- name: Crear usuario "{{ var_usuario }}" en el host/grupo "{{ var_nodo }}".
+  hosts: "{{ var_nodo }}"
+  gather_facts: false
+  tasks:
+  - name: Pull file from source
+      git:
+        repo: 'https://github.com/fran-expertice/php_example.git'
+        dest: /var/www/html
+        version: 1.0.0
