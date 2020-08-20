@@ -8,3 +8,4 @@
      repo: "{{ var_repo }}"
      dest: /var/www/html
      version: "{{ var_version }}"
+     force: yes
