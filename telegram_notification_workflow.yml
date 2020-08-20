@@ -1,10 +1,10 @@
 ---
 - name: Telegram Notifications ok
-  hosts: all
+  hosts: localhost
   tasks:
   - name: enviar mensaje via Telegram
     telegram:
-     token: '1188778937:AAGVml2jrBDI3wqgaHDRM6fxPJd-XIIapwE'
+     token: '1291052384:AAEFHpnvwdV3YsYpOmnz1szVlAL1GZOq60I'
      chat_id: 756926933
      msg: "El lanzamiento {{ tower_workflow_job_name }} ID {{ tower_workflow_job_id }} Finalizó Satisfactoriamente el {{ansible_date_time.date}} por el usuario {{ tower_user_name }} "
  
