@@ -1,0 +1,8 @@
+---
+- name: Instalar Paquete definido por variable via yum. 
+  hosts: "{{ var_nodo }}"
+  tasks:
+  - name: Instalar "{{ var_paquete }}".
+    package: 
+      name: "{{ var_paquete }}"
+      state: absent
