@@ -1,6 +1,6 @@
 ---
 - name: Configura Servicios http/https en firewall del WebServer 
-  hosts: all
+  hosts: "{{ var_nodo }}"
   tasks:
   - firewalld:
       service: https
