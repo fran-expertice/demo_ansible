@@ -1,6 +1,6 @@
 ---
 - name: Instala y Configura WebServer 
-  hosts: all
+  hosts: "{{ var_nodo }}"
   tasks:
   - name: Instalar httpd
     package: 
