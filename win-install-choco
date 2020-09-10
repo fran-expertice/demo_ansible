@@ -2,7 +2,7 @@
 - name: Instala y Configura WebServer 
   hosts: "{{ var_nodo }}"
   tasks:
-  - name: Instalar httpd
-    package: 
-      name: httpd
+  - name: Install git
+    win_chocolatey:
+      name: git
       state: present
