@@ -1,5 +1,5 @@
 ---
-- name: Instala y Configura WebServer 
+- name: Instala y Configura Paquete en windows 
   hosts: "{{ var_nodo }}"
   tasks:
   - name: Install git
