@@ -1,0 +1,11 @@
+---
+- name: Agregar usuario local. 
+  hosts: "{{ var_nodo }}"
+  tasks:
+  - name: Asegura que usuario "{{ var_usuario }}" está presente.
+  win_user:
+    name: "{{ var_usuario }}"
+    password: "{{ var_password }}"
+    state: present
+    groups:
+      - Users
