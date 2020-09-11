@@ -1,1 +1,8 @@
-
+---
+- name: Eliminar usuario local. 
+  hosts: "{{ var_nodo }}"
+  tasks:
+  - name: Asegura que usuario "{{ var_usuario }}" no existe.
+    win_user:
+      name: "{{ var_usuario }}"
+      state: absent
