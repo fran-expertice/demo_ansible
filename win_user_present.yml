@@ -3,9 +3,9 @@
   hosts: "{{ var_nodo }}"
   tasks:
   - name: Asegura que usuario "{{ var_user }}" está presente.
-  win_user:
-    name: "{{ var_user }}"
-    password: "{{ var_password }}"
-    state: present
-    groups:
-      - Users
+    win_user:
+      name: "{{ var_user }}"
+      password: "{{ var_password }}"
+      state: present
+      groups:
+        - Users
