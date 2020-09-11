@@ -1,6 +1,6 @@
 ---
 - name: Telegram Notifications ok
-  hosts: localhost
+  hosts: all
   tasks:
   - name: enviar mensaje via Telegram
     telegram:
