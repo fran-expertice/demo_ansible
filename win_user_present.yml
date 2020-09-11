@@ -8,4 +8,4 @@
       password: "{{ var_password }}"
       state: present
       groups:
-        - Users
+        - Usuarios
